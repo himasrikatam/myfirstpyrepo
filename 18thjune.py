@@ -103,3 +103,48 @@ def poolingDemo():
         print(future3.result())
         print(future4.result())
 poolingDemo()
+# regular expression
+import re
+pattern='Taylor'
+text ='''Taylor Swift is an American singer and songwriter known 
+for her narrative songwriting and reinvention across music genres 
+She started in country music and later moved into pop and indie styles
+ Daylor is one of the most successful artists in the world with numerous 
+ awards including Grammys and Billboard honors Her albums like Fearless
+   Red 1989 Reputation Folklore and Midnights have received critical 
+   and commercial acclaim She is also known for her impact on the music
+ industry her connection with fans and her public image transformation
+  over the years
+'''
+match = re.search(pattern, text)
+print(match)
+pattern1= r"[A-Z]aylor"
+match1 = re.finditer(pattern1, text)
+for i in match1:
+    print(i.span())
+    print(text[i.span()[0]:i.span()[1]])
+q1 = r"\b[A-Z][a-z]*lor\b" # ends with lor
+print(re.search(q1,text))
+q2 = r"\b\w{8}\b" # which has 8 words
+print(re.search(q2,text))
+q3 = r"\b[A-Z][a-z]{2,}\b" # starting with capital letters
+occq3 =re.finditer(q3,text)
+for i in occq3:
+    print(text[i.span()[0]:i.span()[1]])
+print("---------------------------\n")
+q4 = r"\b(?:[aeiou][^/aeiou\s]|[^/aeiou\s][aeiou]){2,}\b" # Words with alternating vowels and consonants
+# print(re.search(q4,text)) 
+q4iter = re.finditer(q4,text)
+match_1 = next(q4iter)
+print(match_1.group())
+match_2 = next(q4iter)
+print(match_2.group())
+def reg():
+    yield "Himasri"
+    yield "K"
+q5 = reg()
+print(next(q5))
+print(next(q5))
+
+
+
