@@ -3,6 +3,8 @@ class nameAge:
     def __init__(self,name,age):
         self.name = name
         self.age = age
+    def __len__(self):
+        return len(self.name)
     def myName(self):
         print("Hello my name is ", self.name," and my age is ", self.age)
     def __str__(self):
@@ -10,6 +12,7 @@ class nameAge:
 p1 = nameAge('Himasri',21)
 p1.myName()
 print(p1)
+print("len of p1:", len(p1) )
 
 # file handling
 f = open("mydata.txt","r")
