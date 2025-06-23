@@ -1,0 +1,27 @@
+MongoDB
+- show dbs
+- db.createCollection("coll_name") 
+INSERTION
+- db.coll_name.insert({},{})   => inserts only 1 document
+- db.coll_name.insertMany([{"key1":"value1","key2":"value2"},
+                            {"key3":"value3","key4":"value4"}]);
+UPDATION
+- db.coll_name.update(
+        {"condition key":"cond value"},
+        {
+            $set:{
+                "update_key":"update_value"
+            }
+        }
+);
+- db.students.updateMany({"name":"Sanjana"}, {$set:{"location":"Chennai"}});
+- use updateOne to change only the 1st document
+READ
+- db.coll_name.find(); => all documents
+- db.coll_name.findOne(); => returns only 1st document
+- db.coll_name.find({"cond_key":"comd_value"});
+- db.coll_name.findOneAndreplace({cond_obj},{replace_with});
+- db.coll_name.findOneAndDelete({cond_obj})
+DELETE
+- db.coll_name.deleteOne({})
+- db.coll_name.deleteMany({}) =>if empty {} then it will delete all documents=>be careful<=
