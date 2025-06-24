@@ -25,3 +25,31 @@ READ
 DELETE
 - db.coll_name.deleteOne({})
 - db.coll_name.deleteMany({}) =>if empty {} then it will delete all documents=>be careful<=
+24th June => CRUD Operations, Queries, Projections, Aggregation, Sorting
+QUERIES
+- lte => db.students.find({"salary": {$lte: 400000}});
+- gte => db.students.find({"salary": {$gte: 400000}});
+- gt => db.students.find({"salary": {$gt: 400000}});
+- eq => db.students.find({"salary": 400000});
+- and => db.students.find({$and: [{"salary": {$lte: 400000}},{"beachPagulu": true}]});
+- or => db.students.find($or: [{"salary": {$lte: 400000}},{"beachpagulu": true}]);
+- and, or =>db.students.find({$and:[{$or: [{"salary":{$lte: 400000}},{"beachPagulu":true}]},{"location":"Chennai"},{"name":"Pooji"}]});
+PROJECTIONS
+- db.students.find({},{"name":1}) => returns all _id and name
+- db.students.find({},{"name":1,"_id":0}); => returns all name not _id
+- db.students.find({"salary":{$lte: 400000}},{"name":1,"_id":0}) => returns name of those which satisfies the condition
+AGGREGATION
+- pipeline: combo of 1 or more Operations
+- var pipeline = [{ $sort: {"name":1}}, { $limit: 5}];
+    db.students.aggregate(pipeline);
+LIMIT and SKIP
+- db.students.find().limit(5) => returns only 5
+- db.students.find().skip(5) => returns all but by skipping the first 5
+SORTING 
+- db.students.find().sort({"name":1}); => asce
+- db.students.find({},{"name":1}).sort({"name":1}); => returns _id,name which are in asce alphabetical order
+- db.students.find().sort({"name":-1}); => desc
+CUSTOM INDEX
+- Index are used to access data quickly
+- acts like a primary key
+- default index '_id' already exists in MongoDB
