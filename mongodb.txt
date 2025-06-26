@@ -1,4 +1,7 @@
 MongoDB
+- BSON => Binary JSON, its a binary format mongodb uses to store data internally
+       => supports more datatypes than JSON(date,binary,objectId)
+       => it is a format mongodb uses internally to store and transfer data.
 - show dbs
 - db.createCollection("coll_name") 
 INSERTION
