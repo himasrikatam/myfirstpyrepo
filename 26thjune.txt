@@ -1,0 +1,39 @@
+MACHINE LEARNING
+=> Supervised: labelled data 
+    -> Classification: o/p is categorical (yes/no)
+    -> regression: o/p is continuous (predict a no.)
+    Examples: SVM, KNN, Decision trees, Random Forest
+  ++ High accuracy -- Limited in discovering hidden structures
+   Evaluation Metrics:
+    -> Accuracy = correct pred. / total pred.
+    -> Precision = TP / TP+FP (use when FP are costly) eg. spam email detection
+    -> Recall = Tp / TP+FN (use when FN are costly) eg. disease detection
+    -> F1 Score = 2 x (Precision x Recall)/ (Precision + Recall) (use when dataset is imbalance)
+    -> Confusion Matrix _____
+                       |TP|FN|Actual +
+                       |FP|TN|Actual -
+             predicted |_+|-_|   
+   Examples: 
+    1. Logistic regression(Classification): used for binary o/p
+          - uses Logistic func(sigmoid) to map predicted values to probabilities b/w 0,1
+          - threshold(~0.5) is applied to classify output 
+
+ ** train_test_split() expects X (features) to be in 2D array format — like a table with rows and columns
+ ** train_test_split(input_row,output_row,test_size,random_state=10) - input_row should be 2D array, random_state is used to not change the sets
+
+    2. Linear regression(Regression): predicts continuous o/p
+          - uses straight line to describe relationship b/w i/p and o/p
+          - uses mean squeared error to find the line
+    
+    3. KNN (Classification and Regression):
+        - predicts o/p based on the majority votes of nearest neighbours
+        - For Classification: finds kth nearest neighbours
+        - For Regression: finds the avg of nearest neighbours
+
+    4. Decision tree(Classification and Regression):
+
+    5. SVM(Classification and Regression):
+
+    6. Random Forest(Classification and Regression):
+
+    
