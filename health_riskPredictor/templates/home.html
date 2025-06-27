@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Health Risk Predictor</title>
+</head>
+<body>
+    <h2>Enter Your Health Details</h2>
+    <form action="/predict" method="post">
+        <input type="text" name="Pregnancies" placeholder="Pregnancies"><br>
+        <input type="text" name="Glucose" placeholder="Glucose"><br>
+        <input type="text" name="BloodPressure" placeholder="Blood Pressure"><br>
+        <input type="text" name="SkinThickness" placeholder="Skin Thickness"><br>
+        <input type="text" name="Insulin" placeholder="Insulin"><br>
+        <input type="text" name="BMI" placeholder="BMI"><br>
+        <input type="text" name="DiabetesPedigreeFunction" placeholder="Pedigree"><br>
+        <input type="text" name="Age" placeholder="Age"><br>
+        <button type="submit">Predict</button>
+    </form>
+</body>
+    <style>
+        body {
+            margin: 8% 35%;
+            background-color: #d7a8d6;
+            border-radius: 10px;
+        }
+
+        h2 {
+            font-family: 'Lexend', sans-serif;
+        }
+
+        form input {
+            margin-bottom: 10px;
+            border-radius: 3px;
+            padding: 8px;
+            width: 100%;
+        }
+
+        button {
+            padding: 10px 15px;
+            border-radius: 5px;
+            background-color: #fc86a7;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #d7a8d6;
+        }
+    </style>
+</html>
