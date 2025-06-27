@@ -27,5 +27,7 @@ modelRF = RandomForestClassifier(n_estimators=100, random_state=42)
 modelRF.fit(X_train, y_train)
 rfAccuracy = modelRF.score(X_test,y_test)
 print("RF:",rfAccuracy)
+# pickle => a python module, in which the the py dtypes are converted into byte streams(serializing  and deserializing)
+# rb => read binary, wb => write binary
 with open('model.pkl','wb') as file:
     pickle.dump(modelRF,file)
