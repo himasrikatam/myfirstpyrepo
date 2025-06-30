@@ -1,0 +1,82 @@
+MACHINE LEARNING
+Types of Data:
+ - Qualitative Data(categorical): quality of an object.
+   2 types:
+    -> Nominal Data: no numerical value.Mean,variance is not possible but mode, median are possible. ex: blood groups
+    -> Ordinal Data: naturally ordered. mode,median is possible, eg: grades
+ - Quantitative Data(numerical): quantity of an object
+   2 types:
+    -> Interval Data: where the difference between values is meaningful. 0 doesent mean nothing. +- allowed, x/ not allowed eg: 30degrees is more than 10degree
+    -> Ratio Data: 0  means complete absence of data.+-x/ all allowed. eg: 0kgs, 10km
+Measures of central tendancy: Mean, Mode, Median.
+Measures of Variability: 
+    - Variance: how spread out the data is from mean, stand deviation: tells how muvh value is deviated from mean.
+    - Mean absoulte deviation: avg absolute distance of each data point and mean, used as its less affected by the outliers
+    - Percentile: <25% = Q1, 50% = Q2, <75% = Q3,100% = max value 
+    - Inter-Quartile Range (IQR=Q3-Q1): measures the spread of the middle 50% of the data. helps in Identifying outliers, lower bound= Q1-1.5xIQR, upper bound= Q1+1.5xIQR,
+
+
+
+=> Supervised: labelled data 
+    -> Classification: o/p is categorical (yes/no)
+    -> regression: o/p is continuous (predict a no.)
+    Examples: SVM, KNN, Decision trees, Random Forest
+  ++ High accuracy -- Limited in discovering hidden structures
+   Evaluation Metrics:
+    -> Accuracy = correct pred. / total pred.
+    -> Precision = TP / TP+FP (use when FP are costly) eg. spam email detection
+    -> Recall = Tp / TP+FN (use when FN are costly) eg. disease detection
+    -> F1 Score = 2 x (Precision x Recall)/ (Precision + Recall) (use when dataset is imbalance)
+    -> Confusion Matrix _____
+                       |TP|FN|Actual +
+                       |FP|TN|Actual -
+             predicted |_+|-_|   
+   Examples: 
+    1. Logistic regression(Classification): used for binary o/p
+          - uses Logistic func(sigmoid) to map predicted values to probabilities b/w 0,1
+          - threshold(~0.5) is applied to classify output 
+
+ ** train_test_split() expects X (features) to be in 2D array format — like a table with rows and columns
+ ** train_test_split(input_row,output_row,test_size,random_state=10) - input_row should be 2D array, random_state is used to not change the sets
+
+    2. Linear regression(Regression): predicts continuous o/p
+          - uses straight line to describe relationship b/w i/p and o/p
+          - uses mean squeared error to find the line
+    
+    3. KNN (Classification and Regression):
+        - predicts o/p based on the majority votes of nearest neighbours
+        - For Classification: finds kth nearest neighbours
+        - For Regression: finds the avg of nearest neighbours
+
+    4. Decision tree(Classification and Regression):
+
+    5. SVM(Classification and Regression):
+
+    6. Random Forest(Classification and Regression):
+Overfitting:
+ when the model is too complex
+ high accuracy on training, low on testing set and validation sets
+Underfitting:
+ when the model is too simple
+ low accuracy on both training and testing sets
+
+=> Unsupervised Learning: no labelled data, finds pattern
+  Types:
+    1. Clustering: groups data into clusters basedon feature similarity.
+       ex: K-Means Clustering
+    2. Dimentionality Reduction: reduces no.of features by preserving important features.
+       ex: PCA
+    3. Association Rules: discovers relationship b/w variables in the datatset
+       ex: Apriori, Eclat
+    4. Anamoly detection: Identifying unsual patterns in data.
+=> K- fold Cross Validation: Cross Validation is used to tune models(reduce overfitting)
+    - if u have 100 samples -> divide them into 5 sets,
+    - 1,2,3,4,5 -> now use 1st set as test set, 2 to 5 as train sets-> find accuarcy a1
+    - 1,2,3,4,5 -> now use 2nd set as test set, 1,3 to 5 as train sets-> find accuarcy a2
+    .
+    .
+    .
+    - now take the average of a1,a2,a3,a4,a5 as the accuracy of that dataset
+=> Stratified K- fold: when classes are imbalanced we classify the sets such that it'll have equal propotions of all classes
+
+    
