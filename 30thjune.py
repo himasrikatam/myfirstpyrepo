@@ -35,10 +35,10 @@ plt.title("Box Plot Example")
 plt.xlabel("Values")
 plt.grid(True)
 # plt.show()
-# correlation: measure of strenght and directiuon of 2 variables -1 to +1
+# correlation: measure of strength and direction of 2 variables -1 to +1
 x=[1,2,3,4,5,6,7]
 y=[20,40,20,30,40,80,90]
 print("correlation: ", np.corrcoef(x,y)[0,1])
 # covariance: measure of direction. directly propositional, +/-
 print("Covariance: ",np.cov(x,y,ddof=1)[0,1])
-# causation: one variable causes chnage to other.
+# causation: one variable causes change to other.
