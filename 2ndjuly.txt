@@ -1,0 +1,53 @@
+STEP BY STEP IMPLEMENTATION OF A ML PROJECT
+1. Read Data
+2. EDA : Understand Data
+    - df.info()
+    - df.describe()
+    - df.isnull().sum()
+    - df.nunique() 
+     : Visualize Data
+    - histogram: to understand distribution of Data
+    - box plot: to identify ouliers
+    - scatter plot: to understand the relationship of variables
+    - heatmap: to see the correlation
+3. Data Preprocessing: 
+      : Missing value treatment
+    - use mean/median/mode or knnimputer
+      : Outliers treatment
+    - only only for continuous numerical columns(decide by seeing box plot)
+    - use Boxplot,IQR,wiskers
+      : Duplicate & Garbage value treatment 
+    - df.drop_duplicates()
+    - replace garbage values / drop that row if there're too many garbage values
+4. Feature Engineering
+      : Feature Creation: based on domain knowledge(domain specific/data driven/industry standards)
+      : Feature Transformation:
+    - 1. Normalization: Adjusts numerical features to be in range b/w (0,1) (prevents feature dominating from other)
+    - 2. Standardization: Centers features around 0 with stand deviation=1 (considers all features equally)
+    - 3. Encoding: Categorical -> numerical
+           - get_dummies(): onehot uses get_dummies()
+           - label Encoding: [R,G,B] = [0,1,2]
+           - onehot Encoding: [R,G,B] => R = [1,0,0], G = [0,1,0], B = [0,0,1]
+    - 4. Log Transformation: Helps with skewed data, uses math operations to scale the features
+    - 5. Polynomial Transformation: Adds poly terms to non-linear relations
+5. Feature Selection: 
+      : Unsupervised Techniques: doesnt use target variable to select
+    - 1. PCA(compresses info) : linear dim reduction method: A= Bx+C, can remove B,C features
+    - 2. ICA(seperates info) : divides multidimen signal into its components 
+    - 3. Non-Negative Matrix Factorization(NMF)(extracts sets of basic features): approx n-n data  matrix as a product of 2 basic data matrices
+    - 4. t-distributed Stochastic Neighbor embedding(t-SNE) : projects original feature space into low-dim space that maintains struc of the original data   
+    : Supervised Techniques: uses target variable to select
+    - 1. Filter Methods: Use statistical tests between features and target.
+    - 2. Wrapper Methods: Evaluate subsets of features by training a model.
+    - 3. Embedded Methods:Feature selection happens during model training.
+           - Regularization: prevents overfitting by adding penalty term to the loss function(MSE)
+              loss(R) = MSE + (lambda = Regularization strength)x penalty term
+              - L1(when u want feature selection) -> penalty term = abs values of coeff
+              - L2(Ridge)(when u want to decrease impact of less imp features) -> penalty term = sum of squr values of coeff
+              - Elastic Net(when features are highly correlated) -> L1+L2
+6. Split Data
+7. Model Selection & Training
+8. Model Evaluation
+9. Hyper Parameter Tuning
+10. Final Model Testing
+11. Deployment
