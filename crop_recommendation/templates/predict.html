@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+</head>
+    <style>
+        body {
+            margin: 8% 30%;
+            background-color: #a8d7b5;
+            font-family: sans-serif;
+            padding: 10px 15px;
+            transition: background-color 0.5s ease;
+        }
+        .res{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border: 1px solid gray;
+            padding: 4% 5%;
+            border-radius: 25px;
+            background: linear-gradient(135deg, #1b5f2e, #85c5af, #1b5f2e);
+        }
+        body:hover {
+            background-color: #95cfa8;
+        }
+        h2 {
+            display: flex;
+            justify-content: center;
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+        }
+        a {
+            display: flex;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        a:hover {
+            color: #26661f;
+            transform: scale(1.05);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+<body>
+    <div class="res">
+        <h2>Recommended Crop is: {{ prediction }}</h2>
+    <a href="/">Go Back</a>
+    </div>
+</body>
+</html>
