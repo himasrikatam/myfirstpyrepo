@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CROP RECOMMENDATION</title>
+</head>
+<body>
+    <h2>Enter the Details</h2>
+    <form action="/result" method="post">
+        <input type="text" name="N" placeholder="N"><br>
+        <input type="text" name="P" placeholder="P"><br>
+        <input type="text" name="K" placeholder="K"><br>
+        <input type="text" name="temperature" placeholder="temperature"><br>
+        <input type="text" name="humidity" placeholder="humidity"><br>
+        <input type="text" name="ph" placeholder="ph"><br>
+        <input type="text" name="rainfall" placeholder="rainfall"><br>
+        <button type="submit">Predict</button>
+    </form>
+</body>
+     <style>
+        body {
+            margin: 6.4% 35%;
+            /* background-color: #94d8a8; */
+            background: linear-gradient(135deg, #196d30, #289d75, #0b5732);
+            border-radius: 10px;
+            font-family: 'Lexend', sans-serif;
+            transition: background-color 0.5s ease;
+        }
+        body:hover {
+            background-color: #95cfa8;
+        }
+        h2 {
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        form input {
+            margin-bottom: 10px;
+            border-radius: 3px;
+            padding: 8px;
+            width: 100%;
+            border: 1px solid #ccc;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        form input:focus {
+            box-shadow: 0 0 5px rgba(39, 174, 96, 0.7);
+            transform: scale(1.02);
+            outline: none;
+        }
+        button {
+            padding: 10px 15px;
+            border-radius: 5px;
+            background-color: #26661f;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        button:hover {
+            background-color: #498a41;
+            transform: scale(1.05);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</html>
