@@ -1,0 +1,105 @@
+STEP BY STEP IMPLEMENTATION OF A ML PROJECT
+1. Read Data
+2. EDA : Understand Data
+    - df.info()
+    - df.describe()
+    - df.isnull().sum()
+    - df.nunique() 
+     : Visualize Data
+    - histogram: to understand distribution of Data
+    - box plot: to identify ouliers
+    - scatter plot: to understand the relationship of variables
+    - heatmap: to see the correlation
+3. Data Preprocessing: 
+      : Missing value treatment
+    - use mean(normally distributed)/median/mode(skewed) or knnimputer
+      : Outliers treatment
+    - only only for continuous numerical columns(decide by seeing box plot)
+    - use Boxplot,IQR,wiskers
+      : Duplicate & Garbage value treatment 
+    - df.drop_duplicates()
+    - replace garbage values / drop that row if there're too many garbage values
+4. Feature Engineering
+      : Feature Creation: based on domain knowledge(domain specific/data driven/industry standards)
+      : Feature Transformation:
+    - 1. Normalization: Adjusts numerical features to be in range b/w (0,1) (prevents feature dominating from other)
+    - 2. Standardization: Centers features around 0 with stand deviation=1 (considers all features equally)
+    - 3. Encoding: Categorical -> numerical
+           - get_dummies(): onehot uses get_dummies()
+           - label Encoding: [R,G,B] = [0,1,2]
+           - onehot Encoding: [R,G,B] => R = [1,0,0], G = [0,1,0], B = [0,0,1]
+    - 4. Log Transformation: Helps with skewed data, uses math operations to scale the features
+    - 5. Polynomial Transformation: Adds poly terms to non-linear relations
+5. Feature Selection: 
+      : Unsupervised Techniques: doesnt use target variable to select
+    - 1. PCA-Principle component analysis(compresses info) : linear dim reduction method: A= Bx+C, can remove B,C features
+    - 2. ICA-Independent component analysis(seperates info) : divides multidimen signal into its components 
+    - 3. Non-Negative Matrix Factorization(NMF)(extracts sets of basic features): approx n-n data matrix as a product of 2 basic data matrices
+    - 4. t-distributed Stochastic Neighbor embedding(t-SNE) : projects original feature space into low-dim space that maintains struc of the original data   
+    : Supervised Techniques: uses target variable to select
+    - 1. Filter Methods: Use statistical tests between features and target.
+    - 2. Wrapper Methods: Evaluate subsets of features by training a model.
+    - 3. Embedded Methods:Feature selection happens during model training.
+           - Regularization: prevents overfitting by adding penalty term to the loss function(MSE)
+              loss(R) = MSE + (lambda = Regularization strength)x penalty term
+              - L1(when u want feature selection) -> penalty term = abs values of coeff
+              - L2(Ridge)(when u want to decrease impact of less imp features) -> penalty term = sum of squr values of coeff
+              - Elastic Net(when features are highly correlated) -> L1+L2
+6. Split Data
+7. Model Selection & Training:
+  MODEL SELECTION(4th July):
+    Classification(predicting categories): Spam or not
+    Regression(predicting numbers): Price prediction
+    Target Type:
+      1. Numeric: Regression: Linear Regression, Decision Tree Regressor, Random Forest Regressor, SVR
+      2. Categorical: Classification: Logistic Regression, KNN, Decision Tree, Random Forest, SVM
+      3. No target: Clustering: K-Means
+    No. of Features:
+      1. Low dim(few features): Logistic Regression, KNN, SVM
+      2. High dim: SVM, Random Forest, PCA + any classifier
+      3. Large Dataset: Random Forest, XGBoost
+      4. Small Dataset: Logistic Regression, SVM
+    Feature Relationship:
+      1. Linear: Linear/Logistic Regression
+      2. Non-Linear: Decision Tree, Random Forest, SVM with kernel
+    Data Balance:
+      1. Imbalanced classes (e.g., 90% Class A, 10% Class B): Random Forest, SVM
+      2. Highly skewed numeric data: Random Forest(better use normalization)              
+8. Model Evaluation
+9. Hyper Parameter Tuning
+10. Final Model Testing
+11. Deployment
+
+BIAS-VARIANCE
+Bias: Difference between predicted values of ml model and the actual values
+  High Bias -> over simple model -> underfitting -> high error on test and train sets
+Variance: How much a ml model's prediction changes when its trained on differnet Dataset
+  High Variance -> over-complex model -> overfitting -> low error on train data, high error on test data -> considers noise also as features
+  To reduce variance:
+    -> cross validation
+    -> Regularization
+    -> dimentionality reduction
+    -> ensemble models
+ENSEMBLE MODELS: combines multiple models to improve performance
+  Types:
+    1. Bagging(Bootstrap Aggregation):
+      - Trains multiple models on different subset of features using bootstraping.
+      - Combines predictions-> average for regression, -> majority for Classification
+      - reduces variance
+      Ex: Random Forest
+    2. Boosting:
+      - Trains sequencially, with each model focusing on error of the previous model.
+      - Combines predictions by weighting the model based on their accuracy
+      Ex: AdaBoost, XGBoost, Stacking, Voting
+Metrics for Regression:
+1. MSE (Mean squared error):
+   - average of the squares of errors (difference between actual and predicted values).
+   - Penalizes large errors more heavily (because errors are squared)
+   - Sensitive to outliers
+   - low MSE better model
+2. RMSE (Root Mean squared error):
+   - low RMSE better model
+3. MAE (Mean Absoulte Error):
+   -  average absolute difference between actual and predicted values.
+   - treates all errors equally
+   - More robust to outliers

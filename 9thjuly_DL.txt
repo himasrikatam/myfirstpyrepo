@@ -1,0 +1,35 @@
+DEEP LEARNING
+Neural Networks: consists of layers of neurons that processes and learns patterns in data.
+Types: 
+1. Perceptron: single layer binary classifier. ex: logistic regression
+2. Multilayer Perceptron(Feedforward NN): connected perceptrons.
+    - Use when data is structured and realtions are straight forward
+3. CNN: extracts features using filters
+    - image, object, video analysis
+4. RNN: has memory
+    - NLP, time series
+5. LSTMs(Long shhort term memory networks) and GRUs(Gated recurrent units): 
+    - Language translation 
+6. Autoencoders(unsupervised): Dimentionality detection, anomalies detection
+7. GANs: Generators, Discriminators
+    - Image generation, data augemenation
+8. Transformers: Q/A, text summarization, time series analysis, speech recognition 
+
+Neurons : works as an unit in neutral networks.
+    - contains Activation, weights
+Activation: gives non linearity to learn complex patterns
+Optimizer: control how the model updates its weights during training - used for backpropagation
+    - minimizes loss function
+Loss function tells the model how wrong its predictions are.
+    
+TODO LIST:
+    1. CNN - handson
+    2. RNN - handson
+    3. AUTO ENCODERS 
+    4. LSTMs 
+    5. GANs - handson
+    6. TRANSFORMERS - handson
+    7. LLMs - handson
+    8. RAGs - handson
+    9. LANGCHAIN - text summarization from pdf chatbot
+    10. MCPs

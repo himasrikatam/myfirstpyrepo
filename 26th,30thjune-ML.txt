@@ -25,7 +25,7 @@ Measures of Variability:
    Evaluation Metrics:
     -> Accuracy = correct pred. / total pred.
     -> Precision = TP / TP+FP (use when FP are costly) eg. spam email detection
-    -> Recall = Tp / TP+FN (use when FN are costly) eg. disease detection
+    -> Recall = TP / TP+FN (use when FN are costly) eg. disease detection
     -> F1 Score = 2 x (Precision x Recall)/ (Precision + Recall) (use when dataset is imbalance)
     -> Confusion Matrix _____
                        |TP|FN|Actual +
@@ -79,4 +79,6 @@ Underfitting:
     - now take the average of a1,a2,a3,a4,a5 as the accuracy of that dataset
 => Stratified K- fold: when classes are imbalanced we classify the sets such that it'll have equal propotions of all classes
 
-    
+correlation: measure of strength and direction of 2 variables -1 to +1
+covariance: measure of direction. directly propositional, +/-
+causation: one variable causes change to other.

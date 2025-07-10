@@ -2,7 +2,7 @@ import pickle
 from flask_pymongo import PyMongo
 from flask import Flask
 from flask import request, render_template
-
+ 
 app = Flask(__name__)
 model, le = pickle.load(open('model_pickle', 'rb'))
 app.config["MONGO_URI"] = "mongodb://localhost:27017/cropsDB"
