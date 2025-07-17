@@ -3,13 +3,14 @@ MongoDB
        => supports more datatypes than JSON(date,binary,objectId)
        => it is a format mongodb uses internally to store and transfer data.
 - show dbs
+- show collections
 - db.createCollection("coll_name") 
 INSERTION
 - db.coll_name.insert({},{})   => inserts only 1 document
 - db.coll_name.insertMany([{"key1":"value1","key2":"value2"},
                             {"key3":"value3","key4":"value4"}]);
 UPDATION
-- db.coll_name.update(
+- db.coll_name.updateOne(
         {"condition key":"cond value"},
         {
             $set:{
